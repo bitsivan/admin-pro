@@ -6,6 +6,8 @@ import { Grafica1Component } from './grafica1/grafica1.component';
 import { PagesComponent } from './pages.component';
 import { ShareModule } from '../share/share.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ComponentsModule } from '../components/components/components.module';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ShareModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ComponentsModule
   ]
 })
 export class PagesModule { }
