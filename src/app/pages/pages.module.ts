@@ -7,8 +7,7 @@ import { PagesComponent } from './pages.component';
 import { ShareModule } from '../share/share.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ComponentsModule } from '../components/components/components.module';
-
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,7 @@ import { ComponentsModule } from '../components/components/components.module';
     ShareModule,
     RouterModule,
     FormsModule,
-    ComponentsModule
+    ComponentsModule,
   ]
 })
 export class PagesModule { }
