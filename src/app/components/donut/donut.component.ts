@@ -10,7 +10,7 @@ import { ChartData, ChartType } from 'chart.js';
 export class DonutComponent implements OnInit {
   @Input() title:string='';
   @Input('labels') doughnutChartLabels: string[] =['Label1', 'Label2','Label3'];
-  @Input() data:number[]=[];
+  @Input('data') data:number[]=[];
 
   constructor() { }
 
