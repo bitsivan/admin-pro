@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { filter, map } from 'rxjs/operators';
   styles: [
   ]
 })
-export class BreadcrumbComponent implements OnInit {
+export class BreadcrumbComponent implements OnInit, OnDestroy {
   public titulo: string = '';
   public titleSubs$: Subscription;
   constructor(private router: Router) {
@@ -28,5 +28,9 @@ export class BreadcrumbComponent implements OnInit {
       filter((event:ActivationEnd) => event.snapshot.firstChild === null),
       map((event: ActivationEnd)=> event.snapshot.data),
     );
+  }
+
+  ngOnDestroy(): void {
+    this.titleSubs$.unsubscribe();
   }
 }
